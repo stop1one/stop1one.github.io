@@ -110,10 +110,10 @@ author:
   location         : "Seoul, Republic of Korea"
   email            :
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/stop1one"
-    - label: "Instagram"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/stop1one"
+    - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/st0p1one"
 
