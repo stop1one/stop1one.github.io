@@ -113,6 +113,10 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/stop1one"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/st0p1one"
+
 
 # Site Footer
 footer:
@@ -125,7 +129,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/stop1one"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -134,7 +138,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://instagram.com/st0p1one"
 
 
 # Reading Files
