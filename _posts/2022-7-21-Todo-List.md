@@ -1,10 +1,9 @@
 ---
 title: “Todo List”
 categories:
- - Github_Pages
+  - Github Pages
 tags: 
-- github_pages
-toc: false
+  - github pages
 ---
 
 # Todo List

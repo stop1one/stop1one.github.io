@@ -1,11 +1,9 @@
 ---
 title: “My first web study”
 categories:
- - Github_Pages
-tags: 
-- github_pages
-toc: false
-
+  - Github Pages
+tags: 
+  - github pages
 ---
 
 # My first web study
