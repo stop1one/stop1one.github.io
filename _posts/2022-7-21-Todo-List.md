@@ -1,5 +1,5 @@
 ---
-title: “Todo List”
+title: "Todo List"
 categories:
   - Github Pages
 tags: 
@@ -7,5 +7,5 @@ tags: 
 ---
 
 # Todo List
-[Github Repository Link](https://github.com/stop1one/todo-list)
+[Github Repository Link](https://github.com/stop1one/todo-list)  
 [Github Page Link](https://stop1one.github.io/todo-list/)

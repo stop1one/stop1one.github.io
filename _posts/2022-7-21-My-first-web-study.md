@@ -1,5 +1,5 @@
 ---
-title: “My first web study”
+title: "My first web study"
 categories:
   - Github Pages
 tags: 
@@ -7,5 +7,5 @@ tags:
 ---
 
 # My first web study
-[Github Repository Link](https://github.com/stop1one/Basic-Web)
+[Github Repository Link](https://github.com/stop1one/Basic-Web)  
 [Github Page Link](https://stop1one.github.io/Basic-Web/)
