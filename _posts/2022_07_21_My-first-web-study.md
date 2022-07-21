@@ -8,4 +8,5 @@ toc: false
 ---
 
 # My first web study
-Github Page Link : [Basic-Web](https://stop1one.github.io/Basic-Web/)
+[Github Repository Link](https://github.com/stop1one/Basic-Web)
+[Github Page Link](https://stop1one.github.io/Basic-Web/)
