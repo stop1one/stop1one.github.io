@@ -1,8 +1,8 @@
 ---
 title: "Todo List"
 categories:
-  - Github Pages
-tags: 
+  - Github Pages
+tags: 
   - github pages
 ---
 
