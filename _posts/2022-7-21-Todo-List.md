@@ -1,9 +1,9 @@
 ---
 title: "Todo List"
 categories:
-  - Github Pages
+  - Frontend
 tags: 
-  - github pages
+  - Frontend
 ---
 
 # Links

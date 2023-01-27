@@ -1,9 +1,9 @@
 ---
 title: "My first web study"
 categories:
-  - Github Pages
+  - Frontend
 tags: 
-  - github pages
+  - Frontend
 ---
 
 # Links
