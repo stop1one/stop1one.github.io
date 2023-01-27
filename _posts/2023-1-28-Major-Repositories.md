@@ -7,6 +7,9 @@ tags:
   - Major
 ---
 
+시간(연도-학기) 순으로 정리하였고  
+학수번호 교수 과목명 주제 를 적어두었음
+
 ### COSE213 (21-2)
 COSE213 정원기 자료구조 과제 
 [링크](https://github.com/stop1one/COSE213)
