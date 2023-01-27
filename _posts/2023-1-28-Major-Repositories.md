@@ -1,10 +1,10 @@
 ---
 title: "전공 과목 레포지토리 모음"
 categories:
-  - Repository
-tags: 
-  - Repository
   - Major
+tags: 
+  - Major
+  - Repository
 ---
 
 시간(연도-학기) 순으로 정리하였고  
