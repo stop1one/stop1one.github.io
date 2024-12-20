@@ -106,6 +106,7 @@ social_preview_image: # string, local or CORS resources
 toc: true
 
 comments:
+  active: giscus
   # Global switch for the post-comment system. Keeping it empty means disabled.
   provider: # [disqus | utterances | giscus]
   # The provider options are as follows:
@@ -117,10 +118,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: stop1one/stop1one.github.io # <gh-username>/<repo>
+    repo_id: R_kgDONfoh1w
+    category: General
+    category_id: DIC_kwDONfoh184ClZxj
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
