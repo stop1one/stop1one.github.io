@@ -3,25 +3,29 @@
 - type: github
   icon: "fab fa-github"
 
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
-
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
+- type: linkedin
+  icon: "fab fa-linkedin" # icons powered by <https://fontawesome.com/>
+  url: "https://www.linkedin.com/in/stop1one/" # Fill with your Linkedin homepage
+
+- type: instagram
+  icon: "fab fa-square-instagram"
+  url: "https://www.instagram.com/st0p1one/"
+
 # Uncomment and complete the url below to enable more contact options
+# - type: twitter
+#   icon: "fa-brands fa-x-twitter"
+#
+# - type: rss
+#   icon: "fas fa-rss"
+#   noblank: true
 #
 # - type: mastodon
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your Mastodon account page, rel="me" will be applied for verification
-#
-# - type: linkedin
-#   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-#   url:  ''                  # Fill with your Linkedin homepage
 #
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
