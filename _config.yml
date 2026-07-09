@@ -19,7 +19,7 @@ title: 보편적인깃로그 # the main title
 tagline: 日新又日新 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  딥러닝을 전공하는 학부생의 딥러닝 및 통계학/수학 공부 내용을 정리하는 블로그입니다.
+  정지원의 공부 내용 정리 블로그
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -35,7 +35,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Jiwon
-  email: jjown4086@korea.ac.kr # change to your email address
+  email: jjwon4086@korea.ac.kr # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/stop1one # change to your GitHub homepage
