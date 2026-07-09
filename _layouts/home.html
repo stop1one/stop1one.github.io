@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<article class="px-1">
+  <div class="content">
+    {% assign home_page = site.pages | where: "path", "home.md" | first %}
+    {% if home_page %}
+      {{ home_page.content | markdownify }}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+</article>

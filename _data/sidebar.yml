@@ -1,0 +1,5 @@
+# Configuration for the sidebar categories and tags
+- category: Paper
+  tags:
+    - Graph
+- category: Blog

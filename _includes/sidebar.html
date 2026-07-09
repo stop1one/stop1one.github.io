@@ -1,0 +1,208 @@
+<!-- The Side Bar -->
+
+<style>
+  /* Base style for sub-category items (under 1650px viewport) */
+  #sidebar ul li.sub-category-item {
+    padding-left: 2.75rem !important; /* 1.5rem base padding + 1.25rem indentation */
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Base style for tag items (under 1650px viewport) */
+  #sidebar ul li.tag-item {
+    padding-left: 4.0rem !important; /* 1.5rem base padding + 2.5rem indentation */
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Style for large viewports (>= 1650px) */
+  @media all and (min-width: 1650px) {
+    #sidebar ul li.sub-category-item {
+      padding-left: 4.0rem !important; /* 2.75rem base padding + 1.25rem indentation */
+      padding-right: 2.75rem !important;
+    }
+    #sidebar ul li.tag-item {
+      padding-left: 5.25rem !important; /* 2.75rem base padding + 2.5rem indentation */
+      padding-right: 2.75rem !important;
+    }
+  }
+</style>
+
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
+      {%- if site.avatar != empty and site.avatar -%}
+        {%- capture avatar_url -%}
+          {% include media-url.html src=site.avatar %}
+        {%- endcapture -%}
+        <img src="{{- avatar_url -}}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      {%- endif -%}
+    </a>
+
+    <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+  </header>
+  <!-- .profile-wrapper -->
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- HOME -->
+      <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+        <a href="{{ '/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+        </a>
+      </li>
+      
+      <!-- CATEGORIES -->
+      {% assign is_categories_active = false %}
+      {% if page.url contains '/categories/' or page.url contains '/tags/' %}
+        {% assign is_categories_active = true %}
+      {% endif %}
+      <li class="nav-item{% if is_categories_active %}{{ " active" }}{% endif %}">
+        <a href="{{ '/categories/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-stream"></i>
+          <span>{{ site.data.locales[include.lang].tabs.categories | default: 'CATEGORIES' | upcase }}</span>
+        </a>
+      </li>
+
+      <!-- CATEGORIES & TAGS SUBMENU (From _data/sidebar.yml) -->
+      {% for entry in site.data.sidebar %}
+        {% assign category_name = entry.category %}
+        {% capture ctg_url %}/categories/{{ category_name | slugify | url_encode }}/{% endcapture %}
+        {% assign is_ctg_active = false %}
+        {% if page.url == ctg_url %}
+          {% assign is_ctg_active = true %}
+        {% endif %}
+        
+        <li class="nav-item sub-category-item{% if is_ctg_active %}{{ " active" }}{% endif %}">
+          <a href="{{ ctg_url | relative_url }}" class="nav-link" style="font-size: 0.85rem; padding-top: 0.2rem; padding-bottom: 0.2rem; font-weight: normal;">
+            <i class="fa-fw far fa-folder" style="font-size: 0.8rem; margin-right: 0.25rem;"></i>
+            <span>{{ category_name }}</span>
+          </a>
+        </li>
+
+        <!-- TAGS SUBMENU -->
+        {% if entry.tags %}
+          {% for tag_name in entry.tags %}
+            {% capture tag_url %}/tags/{{ tag_name | slugify | url_encode }}/{% endcapture %}
+            {% assign is_tag_active = false %}
+            {% if page.url == tag_url %}
+              {% assign is_tag_active = true %}
+            {% endif %}
+            
+            <li class="nav-item tag-item{% if is_tag_active %}{{ " active" }}{% endif %}">
+              <a href="{{ tag_url | relative_url }}" class="nav-link" style="font-size: 0.8rem; padding-top: 0.15rem; padding-bottom: 0.15rem; font-weight: normal;">
+                <i class="fa-fw fas fa-tag" style="font-size: 0.7rem; margin-right: 0.25rem;"></i>
+                <span>{{ tag_name }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+    {% unless site.theme_mode == 'light' or site.theme_mode == 'dark' %}
+      {%- capture icon_system -%}
+        <i class="fa-solid fa-display" data-theme-mode="system"></i>
+      {%- endcapture -%}
+
+      {%- capture icon_light -%}
+        <i class="fa-regular fa-sun" data-theme-mode="light"></i>
+      {%- endcapture -%}
+
+      {%- capture icon_dark -%}
+        <i class="fa-regular fa-moon" data-theme-mode="dark"></i>
+      {%- endcapture -%}
+
+      <div class="btn-group dropup">
+        <button
+          type="button"
+          class="btn btn-link nav-link"
+          aria-label="Switch Mode"
+          id="mode-toggle"
+          data-bs-toggle="dropdown"
+        >
+          {{- icon_light -}}
+          {{- icon_dark -}}
+          {{- icon_system -}}
+        </button>
+        <ul class="dropdown-menu rounded-3 mb-1 p-1">
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="light">
+              {{- icon_light -}}
+              {{- site.data.locales[lang].theme.light -}}
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="dark">
+              {{- icon_dark -}}
+              {{- site.data.locales[lang].theme.dark -}}
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system">
+              {{- icon_system -}}
+              {{- site.data.locales[lang].theme.system -}}
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+      {% endif %}
+    {% endunless %}
+
+    {% for entry in site.data.contact %}
+      {%- assign url = null -%}
+
+      {% case entry.type %}
+        {% when 'github', 'twitter' %}
+          {%- unless site[entry.type].username -%}
+            {%- continue -%}
+          {%- endunless -%}
+          {%- capture url -%}
+            https://{{ entry.type }}.com/{{ site[entry.type].username }}
+          {%- endcapture -%}
+        {% when 'email' %}
+          {%- unless site.social.email -%}
+            {%- continue -%}
+          {%- endunless -%}
+          {%- assign email = site.social.email | split: '@' -%}
+          {%- capture url -%}
+            javascript:void(location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@'))
+          {%- endcapture -%}
+        {% when 'rss' %}
+          {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+          {% assign url = entry.url %}
+      {% endcase %}
+
+      {% if url %}
+        <a
+          href="{{ url }}"
+          aria-label="{{ entry.type }}"
+          {% assign link_types = '' %}
+
+          {% unless entry.noblank %}
+            target="_blank"
+            {% assign link_types = 'noopener noreferrer' %}
+          {% endunless %}
+
+          {% if entry.type == 'mastodon' %}
+            {% assign link_types = link_types | append: ' me' | strip %}
+          {% endif %}
+
+          {% unless link_types == empty %}
+            rel="{{ link_types }}"
+          {% endunless %}
+        >
+          <i class="{{ entry.icon }}"></i>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <!-- .sidebar-bottom -->
+</aside>
+<!-- #sidebar -->
